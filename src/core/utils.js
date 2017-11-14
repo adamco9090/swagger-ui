@@ -610,8 +610,10 @@ export const parseSearch = () => {
     let params = search.substr(1).split("&")
 
     for (let i in params) {
-      i = params[i].split("=")
-      map[decodeURIComponent(i[0])] = decodeURIComponent(i[1])
+      if (params.hasOwnProperty(i)) {
+        i = params[i].split("=")
+        map[decodeURIComponent(i[0])] = decodeURIComponent(i[1])
+      }
     }
   }
 

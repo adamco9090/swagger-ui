@@ -130,7 +130,7 @@ export default class Operations extends React.Component {
                         const tagKey = createDeepLinkPath(tag)
                         const operationKey = createDeepLinkPath(operationId)
 
-                        const allowTryItOut = specSelectors.allowTryItOutFor(op.get("path"), op.get("method"))
+                        const allowTryItOut = getConfigs().supportedSubmitMethods.indexOf(op.get("method")) !== -1
                         const response = specSelectors.responseFor(op.get("path"), op.get("method"))
                         const request = specSelectors.requestFor(op.get("path"), op.get("method"))
 

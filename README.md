@@ -165,6 +165,7 @@ deepLinking | If set to `true`, enables dynamic deep linking for tags and operat
 requestInterceptor | MUST be a function.  Function to intercept try-it-out requests.  Accepts one argument requestInterceptor(request) and must return the potentially modified request.
 responseInterceptor | MUST be a function.  Function to intercept try-it-out responses.  Accepts one argument responseInterceptor(response) and must return the potentially modified response.
 showMutatedRequest | If set to `true` (the default), uses the mutated request returned from a rquestInterceptor to produce the curl command in the UI, otherwise the request before the requestInterceptor was applied is used.
+supportedSubmitMethods | An array of the HTTP methods (lowercased) that will have the `Try it out` option available. An empty array disables all methods. This does not filter the operations from the display. The default is to allow all methods.
 
 ### Plugins
 

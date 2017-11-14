@@ -84,7 +84,8 @@
       plugins: [
         SwaggerUIBundle.plugins.DownloadUrl
       ],
-      layout: "StandaloneLayout"
+      layout: "StandaloneLayout",
+      supportedSubmitMethods: ["get", "post"]
     })
 
     window.ui = ui

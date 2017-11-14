@@ -73,6 +73,19 @@ module.exports = function SwaggerUI(opts) {
 
   const constructorConfig = deepExtend({}, defaults, opts, queryConfig)
 
+  if (constructorConfig.supportedSubmitMethods === undefined ||
+      constructorConfig.supportedSubmitMethods === null) {
+    constructorConfig.supportedSubmitMethods = [
+      "get",
+      "put",
+      "post",
+      "delete",
+      "options",
+      "head",
+      "patch"
+    ]
+  }
+
   const storeConfigs = {
     system: {
       configs: constructorConfig.configs
